@@ -15,6 +15,13 @@ class CreateDocumentoAtendimentoTable extends Migration
     {
         Schema::create('documento_atendimento', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('documento_id');
+            $table->integer('atendimento_id');
+            $table->string('nm_campo', 100);
+            $table->longText('valor_campo');
+            $table->timestamp('dt_abertura');
+            $table->timestamp('dt_fechamento')->nullable();
+            $table->boolean('situacao')->comment('0 - ABERTO, 1 - FECHADO');
             $table->timestamps();
         });
     }

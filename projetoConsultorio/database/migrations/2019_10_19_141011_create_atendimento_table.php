@@ -15,6 +15,11 @@ class CreateAtendimentoTable extends Migration
     {
         Schema::create('atendimento', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('paciente_id');
+            $table->timestamp('dt_atendimento');
+            $table->string('user_id_medico');
+            $table->string('convenio', 20)->nullable();
+            $table->timestamp('dt_alta')->nullable();
             $table->timestamps();
         });
     }
