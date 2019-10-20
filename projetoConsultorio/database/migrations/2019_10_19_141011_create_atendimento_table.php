@@ -18,7 +18,7 @@ class CreateAtendimentoTable extends Migration
             $table->bigInteger('paciente_id');
             $table->timestamp('dt_atendimento');
             $table->string('user_id_medico');
-            $table->string('convenio', 20)->nullable();
+            $table->integer('cd_convenio')->nullable();
             $table->timestamp('dt_alta')->nullable();
             $table->timestamps();
         });

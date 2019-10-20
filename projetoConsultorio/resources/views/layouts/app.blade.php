@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Argon Dashboard') }}</title>
+        <title>{{config('app.name', 'Consultório') }}</title>
         <!-- Favicon -->
         <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
         <!-- Fonts -->
@@ -17,6 +17,19 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+        
+        <style>
+                ::-webkit-scrollbar-track {
+            background-color: #F4F4F4;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            background: #F4F4F4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dad7d7;
+        }
+        </style>
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -37,7 +50,7 @@
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        
+        <script src="{{ asset('argon') }}/js/axios.min.js"></script> 
         @stack('js')
         
         <!-- Argon JS -->
