@@ -16,7 +16,9 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
-        return view('users.index', ['users' => $model->paginate(15)]);
+        $titulo = 'Usuários';
+        $ds_pagina = 'Configurações > Usuários';
+        return view('users.index', ['users' => $model->paginate(15)], compact('ds_pagina', 'titulo'));
     }
 
     /**

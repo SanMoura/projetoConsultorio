@@ -55,5 +55,6 @@
         
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+        @include('includes.scripts')
     </body>
 </html>
