@@ -89,7 +89,7 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">Paciente</th>
+                                <th colspan="2" scope="col">Pacientes</th>
                             </tr>
                         </thead>
                         <tbody id="retornoPacientes">
@@ -102,7 +102,6 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-default">Pesquisar</button>
             </div>
           </div>
         </div>

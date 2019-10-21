@@ -9,7 +9,7 @@ use App\Models\atendimento;
 class AtendimentoController extends Controller
 {
     public function index(atendimento $atendimentos){
-        $ds_pagina = 'Atendimentos';
+        $ds_pagina = 'CONSULTÓRIO > ATENDIMENTO';
 
         $atendimento = $atendimentos->all();
 

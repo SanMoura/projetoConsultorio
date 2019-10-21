@@ -16,11 +16,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'auth', 'namespace' => 'recepcao\atendimento'], function () {
 	Route::resource('atendimento', 'AtendimentoController');
+	Route::resource('pacientes', 'PacienteController');
 });
 
 // SCRIPTS POST
 Route::group(['middleware' => 'auth', 'namespace' => 'recepcao\atendimento'], function () {
-	Route::post('paciente', 'PacienteController@index')->name('listaPacientes');
+	Route::post('paciente', 'PacienteController@search')->name('listaPacientes');
 });
 
 
