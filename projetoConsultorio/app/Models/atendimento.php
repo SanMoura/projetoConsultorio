@@ -12,6 +12,6 @@ class atendimento extends Model
         'dt_atendimento',
         'user_id_medico',
         'cd_convenio',
-        'dt_alta'   
+        'dt_alta'  
     ];
 }

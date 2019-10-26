@@ -15,4 +15,21 @@ class AtendimentoController extends Controller
 
         return view('recepcao.atendimento.atendimento', compact('atendimento', 'ds_pagina'));
     }
+
+    public function store(request $request ,atendimento $atendimento){
+        $formAtemdimento = $request->only([
+            'paciente_id',
+            'dt_atendimento',
+            'user_id_medico',
+            'cd_convenio',
+        ]);
+
+        $insert = $atendimento->create(
+            $formAtemdimento
+        );
+
+        $ds_pagina = 'CONSULTÓRIO > ATENDIMENTO';
+        
+        return view('recepcao.atendimento.atendimento', compact('ds_pagina'));
+    }
 }

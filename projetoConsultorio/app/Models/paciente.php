@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class paciente extends Model
 {
     protected $table = 'paciente';
+
     protected $fillable = [
         'nm_paciente',
         'dt_nascimento',
@@ -23,4 +24,6 @@ class paciente extends Model
         'fone_secundario', 
         'observacoes'
     ];
+
+    
 }

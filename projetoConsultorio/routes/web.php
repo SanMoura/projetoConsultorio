@@ -24,6 +24,11 @@ Route::group(['middleware' => 'auth', 'namespace' => 'recepcao\atendimento'], fu
 	Route::post('paciente', 'PacienteController@search')->name('listaPacientes');
 });
 
+// TESTES
+Route::get('/teste',  function () {
+	return view('recepcao.atendimento.calendario');
+});
+
 
 
 

@@ -48,6 +48,7 @@ class PacienteController extends Controller
 
         $ds_pagina = 'CONSULTÓRIO > ATENDIMENTO > PACIENTE > ATENDER';
         $cd_paciente = $insert->id;
-        return view('recepcao.atendimento.atender', compact('ds_pagina','cd_paciente'));
+        $nm_paciente = $insert->nm_paciente;
+        return view('recepcao.atendimento.atender', compact('ds_pagina','cd_paciente','nm_paciente'));
     }
 }
