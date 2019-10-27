@@ -18,7 +18,8 @@ class CreateAtendimentoTable extends Migration
             $table->bigInteger('paciente_id')->unsigned();
             $table->foreign('paciente_id')->references('id')->on('paciente');
             $table->timestamp('dt_atendimento');
-            $table->string('user_id_medico');
+            $table->bigInteger('user_id_medico')->unsigned();
+            $table->foreign('user_id_medico')->references('id')->on('users');
             $table->integer('cd_convenio')->nullable();
             $table->timestamp('dt_alta')->nullable();
             $table->timestamps();

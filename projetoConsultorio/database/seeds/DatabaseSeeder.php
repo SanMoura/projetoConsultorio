@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
                 TipoUsuarioTableSeeder::class,
                 UsersTableSeeder::class, 
                 EspecialidadeTableSeeder::class,
-                
+                PacienteTableSeeder::class,
+                AtendimentoTableSeeder::class,
             ]
         );
     }

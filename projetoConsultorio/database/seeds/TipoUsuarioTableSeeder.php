@@ -12,6 +12,12 @@ class TipoUsuarioTableSeeder extends Seeder
             [
                 'ds_tipo_usuario' => 'ADMINISTRADOR',
             ],
+            [
+                'ds_tipo_usuario' => 'RECEPCIONISTA',
+            ],
+            [
+                'ds_tipo_usuario' => 'MEDICO',
+            ],
         ];
 
         foreach ($tipoUsuarios as $tipoUsuario) {

@@ -24,7 +24,7 @@
                                         <tr>
                                             <th scope="col">Atendimento</th>
                                             <th scope="col">Paciente</th>
-                                            <th scope="col">Hora de chegada</th>
+                                            <th scope="col">Hora do agendamento</th>
                                             <th scope="col">Convênio</th>
                                             <th scope="col">Médico</th>
                                             <th scope="col">Tipo</th>
@@ -43,10 +43,10 @@
                                                     {{date('H:i',strtotime($atendimento->dt_atendimento))}}
                                                 </td>
                                                 <td>
-                                                    {{$atendimento->cd_convenio}}
+                                                    
                                                 </td>
                                                 <td>
-                                                    Frederico Bezerra
+                                                    {{$atendimento->usuario->name}}
                                                 </td>
                                                 <td>
                                                     Agendado
@@ -95,7 +95,7 @@
                         <tbody id="retornoPacientes">
                             <tr>
                                 <td>Sem resultados</td>
-                            </tr>                                
+                            </tr>                         
                         </tbody>
                     </table>    
                </div>              

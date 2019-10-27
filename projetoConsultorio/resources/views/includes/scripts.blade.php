@@ -10,7 +10,10 @@
         .then(function (response) {
           
             var resultado = response.data;
-           
+   
+            if (resultado[0] != null){
+            
+
             if (resultado[0].nm_paciente == null || pesquisa == '' || resultado[0].nm_paciente == ''){
                 $('#retornoPacientes').html(
                     '<tr>'
@@ -24,11 +27,18 @@
                     $('#retornoPacientes').append(
                     '<tr>'
                     +'<td>'+resultado[i].nm_paciente+'</td>'
-                    +'<td class="text-right"><a href="{{route('atendimento.create')}}" class="btn btn-sm btn-default">Atender</a></td>'
+                    +'<td class="text-right"><a href="{{route('atendimento.create')}}?paciente='+resultado[i].id+'" class="btn btn-sm btn-default">Atender</a></td>'
                     +'</tr>'
                 ); 
                 }                 
             }
+            }else(
+                $('#retornoPacientes').html(
+                    '<tr>'
+                    +'<td class="text-center" colspan="2"><a href="{{route('pacientes.index')}}"' 
+                    +'class="btn btn-sm btn-default">Cadastrar novo paciente</a></td>'
+                    +'</tr>')
+            )
         })
         .catch(function (error) {
             console.log(error);

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\recepcao\atendimento;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\paciente;
+use App\Models\Especialidade;
+use App\Models\atendimento;
+use App\User;
 
 class PacienteController extends Controller
 {
@@ -45,8 +48,18 @@ class PacienteController extends Controller
         );
 
         $ds_pagina = 'CONSULTÓRIO > ATENDIMENTO > PACIENTE > ATENDER';
+
         $cd_paciente = $insert->id;
-        $nm_paciente = $insert->nm_paciente;
-        return view('recepcao.atendimento.atender', compact('ds_pagina','cd_paciente','nm_paciente'));
+
+        $nm_paciente = paciente::where('id',$cd_paciente)
+        ->get();
+
+        $especialidades = Especialidade::where('ativo',1)
+                                       ->get();
+
+        $medicos = User::where('tipo_usuario_id',3)
+                        ->get();
+
+        return view('recepcao.atendimento.atender', compact('ds_pagina','cd_paciente','nm_paciente', 'especialidades', 'medicos'));
     }
 }

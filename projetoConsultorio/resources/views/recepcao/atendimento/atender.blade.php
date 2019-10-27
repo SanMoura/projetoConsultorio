@@ -11,7 +11,7 @@
                     <div class="row align-items-center">
                         <div class="col-12">
                             <h3 class="mb-0">{{ __('Novo Atendimento') }}</h3>
-                            <span class="mb-0">{{ $nm_paciente }}</span>
+                            <span class="mb-0">{{ $nm_paciente[0]->nm_paciente ?? '' }}</span>
                         </div>
                     </div>
                 </div>
@@ -30,14 +30,22 @@
                                     <label for="dt_nascimento">Médico</label>
                                     <select class="custom-select d-block w-100" name="user_id_medico" required>
                                         <option value="">Escolha...</option>
-                                        <option value="1">Dr Frederico Bezerra</option>
+                                        @forelse ($medicos as $medico)
+                                            <option value="{{$medico->id}}">{{$medico->name}}</option>
+                                        @empty
+                                            
+                                        @endforelse
                                     </select>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="especialidade">Especialidade</label>
                                     <select class="custom-select d-block w-100" name="especialidade" required>
                                         <option value="">Escolha...</option>
-                                        <option value="1">Obstetrícia</option>
+                                        @forelse ($especialidades as $especialidade)
+                                            <option value="{{$especialidade->id}}">{{$especialidade->ds_especialidade}}</option>
+                                        @empty
+                                            
+                                        @endforelse
                                     </select>
                                 </div>
                             </div>

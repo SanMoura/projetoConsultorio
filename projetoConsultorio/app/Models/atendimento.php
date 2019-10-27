@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class atendimento extends Model
 {
@@ -18,5 +19,10 @@ class atendimento extends Model
     public function paciente()
     {
         return $this->belongsTo(paciente::class, 'paciente_id');
+    }
+
+    public function usuario()
+    {
+        return $this->belongsTo(User::class, 'user_id_medico');
     }
 }
