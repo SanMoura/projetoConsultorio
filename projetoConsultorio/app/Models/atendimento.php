@@ -14,4 +14,9 @@ class atendimento extends Model
         'cd_convenio',
         'dt_alta'  
     ];
+
+    public function paciente()
+    {
+        return $this->belongsTo(paciente::class, 'paciente_id');
+    }
 }

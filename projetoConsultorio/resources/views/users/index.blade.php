@@ -61,6 +61,12 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        
+                    </div>
+                    <div class="row ml-2">
+                        <div class="col-12">
+                            {{$users -> links()}}
+                        </div>
                     </div>
                     <div class="card-footer py-4">
                         <nav class="d-flex justify-content-end" aria-label="...">

@@ -17,7 +17,7 @@ class UserController extends Controller
 
 
         $users = User::with('tipo_usuario')
-                     ->get();
+                      ->paginate(6);
 
         return view('users.index', compact('ds_pagina', 'titulo', 'users'));
     }
@@ -27,7 +27,7 @@ class UserController extends Controller
     {
         $ds_pagina = 'Configurações > Usuários';
         $tipoUsuarios = TipoUsuario::where('ativo',1)
-                            ->get();
+                                   ->get();
         return view('users.create', compact('tipoUsuarios', 'ds_pagina'));
     }
 
@@ -39,10 +39,12 @@ class UserController extends Controller
         return redirect()->route('user.index')->withStatus(__('Usuário criado com sucesso.'));
     }
 
+
     public function edit(User $user)
     {
         return view('users.edit', compact('user'));
     }
+
 
     public function update(UserRequest $request, User  $user)
     {
@@ -54,10 +56,13 @@ class UserController extends Controller
         return redirect()->route('user.index')->withStatus(__('User successfully updated.'));
     }
 
+
     public function destroy(User  $user)
     {
         $user->delete();
 
         return redirect()->route('user.index')->withStatus(__('User successfully deleted.'));
     }
+
+
 }

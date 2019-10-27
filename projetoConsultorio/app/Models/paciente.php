@@ -25,5 +25,9 @@ class paciente extends Model
         'observacoes'
     ];
 
+    public function atendimento()
+    {
+        return $this->hasMany(atendimento::class, 'paciente_id');
+    }
     
 }

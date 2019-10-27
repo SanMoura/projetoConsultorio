@@ -24,7 +24,7 @@
                     $('#retornoPacientes').append(
                     '<tr>'
                     +'<td>'+resultado[i].nm_paciente+'</td>'
-                    +'<td class="text-right"><a href="#!" class="btn btn-sm btn-default">Atender</a></td>'
+                    +'<td class="text-right"><a href="{{route('atendimento.create')}}" class="btn btn-sm btn-default">Atender</a></td>'
                     +'</tr>'
                 ); 
                 }                 

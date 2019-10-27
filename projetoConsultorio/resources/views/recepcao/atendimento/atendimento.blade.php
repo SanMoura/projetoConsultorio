@@ -31,19 +31,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($atendimento as $row_atendimento)
+                                        @forelse ($atendimentos as $atendimento)
                                             <tr>
                                                 <th scope="row">
-                                                    {{$row_atendimento->id}}
+                                                    {{$atendimento->id}}
                                                 </th>
                                                 <td>
-                                                    MARLUS SANTIAGO MOREIRA DE MOURA
+                                                    {{$atendimento->paciente->nm_paciente}}
                                                 </td>
                                                 <td>
-                                                    {{date('H:i',strtotime($row_atendimento->dt_atendimento))}}
+                                                    {{date('H:i',strtotime($atendimento->dt_atendimento))}}
                                                 </td>
                                                 <td>
-                                                    {{$row_atendimento->cd_convenio}}
+                                                    {{$atendimento->cd_convenio}}
                                                 </td>
                                                 <td>
                                                     Frederico Bezerra

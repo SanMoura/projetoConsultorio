@@ -12,9 +12,7 @@ class PacienteController extends Controller
         $input = $request->all();
         $paciente = $pacientes->where('nm_paciente','like', $input)->get();
         
-        /*foreach ($paciente as $pac) {
-            return $pac->nm_paciente;
-        }*/
+          
 
         return $paciente;
     }
